@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main menu</title>
+</head>
+<body>
+<h1>Главное меню</h1>
+
+<form th:action="@{'/home/clients'}">
+    <button>Клиенты</button>
+</form>
+
+<form th:action="@{'/home/applications'}">
+    <button>Заявки</button>
+</form>
+
+<!--<form th:action="@{'/home/applications'}" th:object="${false}">-->
+<!--    <button>Текущие Заявки</button>-->
+<!--</form>-->
+
+<!--<form th:action="@{'/home/applications/сompleted'}">-->
+<!--    <input type="hidden" th>-->
+<!--    <button type="submit">Выполненные Заявки</button>-->
+<!--</form>-->
+
+<form th:action="@{'/home/employees'}">
+    <button>Сотрудники</button>
+</form>
+
+<!--<div>-->
+<!--    <label th:for="${#ids.next('covered')}" th:text="#{seedstarter.covered}">Covered</label>-->
+<!--    <input type="checkbox" th:field="*{covered}" />-->
+<!--</div>-->
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home / Employee Page</title>
+</head>
+<body>
+<h1>Рабочий #<span th:text="${employee.id}"></span></h1>
+Имя: <span th:text="${employee.name}"></span> <br>
+
+<form th:action="@{'/home/main-menu'}">
+    <button>На главную</button>
+</form>
+
+<!--<form action="#" data-th-action="@{/action/edit}" data-th-object="${model}" method="post">-->
+<!--    <button type="submit" name="action" value="save">save</button>-->
+<!--    <button type="submit" name="action" value="cancel">cancel</button>-->
+<!--</form>-->
+
+</body>
+</html>

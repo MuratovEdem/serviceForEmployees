@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home / Applications Page</title>
+</head>
+<body>
+<h1>Заявки</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Номер</th>
+        <th>Клиент</th>
+        <th>Статус</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="app : ${applications}">
+        <td><span th:text="${app.id}"></span></td>
+        <td><span th:text="${app.clientName}"></span></td>
+        <td><span th:text="${app.isCompleted}"></span></td>
+        <td><a th:href="@{'/home/applications/{id}' (id=${app.id})}"><span th:text="${app.clientName}"></span></a></td>
+    </tr>
+    </tbody>
+</table>
+<form th:action="@{'/home/main-menu'}">
+    <button>На главную</button>
+</form>
+</body>
+</html>

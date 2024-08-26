@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home / Client Page</title>
+</head>
+<body>
+<h1>Клиент #<span th:text="${client.id}"></span></h1>
+Имя: <span th:text="${client.name}"></span>
+<!--<a th:href="@{'/clients/{id}/contract'(id=${client.id})}"><span th:text="Договор"></span></a>-->
+<a th:href="@{'/home/clients/{id}/applications' (id=${client.id})}"><span>Заявки</span></a>
+<br>
+<form th:action="@{'/home/main-menu'}">
+    <button>На главную</button>
+</form>
+</body>
+</html>

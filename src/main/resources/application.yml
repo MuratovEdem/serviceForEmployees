@@ -1,0 +1,17 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1MB
+  application:
+    name: serviceForEmployees
+  datasource:
+    url: jdbc:postgresql://localhost:5432/serviceForEmployees
+    username: postgres
+    password: kingring1
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
