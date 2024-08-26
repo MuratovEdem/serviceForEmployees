@@ -2,7 +2,7 @@ package org.example.serviceforemployees.model;
 
 public enum RoleEnum {
 
-    ADMIN("admin"), EMPLOYEE("employee"), REST("rest");
+    ADMIN("admin"), EMPLOYEE("employee");
 
     private final String name;
 

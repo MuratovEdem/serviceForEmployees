@@ -1,8 +1,6 @@
 package org.example.serviceforemployees.page.pageDTO;
 
 import lombok.Data;
-import org.example.serviceforemployees.model.Application;
-import org.springframework.core.io.ByteArrayResource;
 
 import java.util.Set;
 

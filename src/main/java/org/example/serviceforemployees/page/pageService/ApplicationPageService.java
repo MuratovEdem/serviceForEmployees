@@ -14,12 +14,6 @@ import java.util.Optional;
 public class ApplicationPageService {
 
     private final ApplicationService applicationService;
-//
-//    public List<ApplicationPageDto> findAll() {
-//        return applicationService.findAll().stream()
-//                .map(this::convert)
-//                .toList();
-//    }
 
     public List<ApplicationPageDto> findApplicationsByClientId(Long id){
         return applicationService.findApplicationsByClientId(id).stream()

@@ -38,5 +38,4 @@ public class Application {
         inverseJoinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"))
     @JsonIgnore
     private Set<Employee> employees = new HashSet<>();
-
 }

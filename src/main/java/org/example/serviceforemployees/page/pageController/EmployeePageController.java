@@ -26,7 +26,6 @@ public class EmployeePageController {
         List<EmployeePageDto> employees = employeePageService.findAll();
         model.addAttribute("employees", employees);
         return "employees-page.html";
-
     }
 
     @GetMapping("/{id}")
