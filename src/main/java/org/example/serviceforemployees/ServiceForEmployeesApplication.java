@@ -12,10 +12,13 @@ import java.util.List;
 
 @SpringBootApplication
 public class ServiceForEmployeesApplication {
-
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(ServiceForEmployeesApplication.class, args);
 
+		fillDb(context);
+	}
+
+	public static void fillDb(ConfigurableApplicationContext context) {
 		EmployeeRepository employeeRepository = context.getBean(EmployeeRepository.class);
 
 		AccountRepository accountRepository = context.getBean(AccountRepository.class);
