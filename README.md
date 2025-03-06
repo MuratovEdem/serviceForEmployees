@@ -1,3 +1,3 @@
 Цель: Сервис для внутреннего использования в компании, в котором сотрудники создают и выполняют заявки
 
-Используемые технологии: Java 17, Spring Boot, Hibernate, PostgreSQL, Docker
+Стек технологий: Java 17, Spring Boot, Hibernate, PostgreSQL, Docker
