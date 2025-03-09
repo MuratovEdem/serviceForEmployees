@@ -6,4 +6,4 @@
 3. Обеспечение валидации данных на стороне клиента и сервера.
 4. Реализация механизма аутентификации и авторизации пользователей.
 
-Стек технологий: Java 17, Spring Boot, Spring Security, Hibernate, PostgreSQL, Docker
+Стек технологий: Java 17, Spring Boot, Spring Security, Hibernate, PostgreSQL, Docker, Thymeleaf
