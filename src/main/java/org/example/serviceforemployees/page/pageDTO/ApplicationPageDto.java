@@ -1,7 +1,6 @@
 package org.example.serviceforemployees.page.pageDTO;
 
 import lombok.Data;
-import org.example.serviceforemployees.model.Client;
 
 @Data
 public class ApplicationPageDto {

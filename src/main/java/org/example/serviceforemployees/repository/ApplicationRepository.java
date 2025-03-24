@@ -15,15 +15,14 @@ public interface ApplicationRepository extends JpaRepository<Application, Long> 
     @Query(nativeQuery = true, value = "select a.* from applications a " +
             "left join employees_applications c on a.id = c.application_id " +
             "left join employees emp on emp.id = c.employee_id " +
-            "left join accounts acc on emp.id = acc.employee_id " +
-            "left join clients cl on cl.id = a.client_id " +
+            "left join accounts acc on acc.id = emp.account_id " +
             "where a.is_completed = :isCompleted and acc.login = :login")
     List<Application> findByEmployeeLoginWhereIsCompleted(String login, Boolean isCompleted);
 
     @Query(nativeQuery = true, value = "select a.* from applications a " +
             "left join employees_applications c on a.id = c.application_id " +
             "left join employees emp on emp.id = c.employee_id " +
-            "left join accounts acc on emp.id = acc.employee_id " +
+            "left join accounts acc on cl.id = emp.account_id " +
             "where acc.login = :login")
     List<Application> findByEmployeeLogin(String login);
 

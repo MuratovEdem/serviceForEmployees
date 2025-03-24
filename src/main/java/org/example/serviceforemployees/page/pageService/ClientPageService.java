@@ -1,18 +1,13 @@
 package org.example.serviceforemployees.page.pageService;
 
 import lombok.RequiredArgsConstructor;
-import org.example.serviceforemployees.model.Application;
 import org.example.serviceforemployees.model.Client;
-import org.example.serviceforemployees.page.pageDTO.ApplicationPageDto;
 import org.example.serviceforemployees.page.pageDTO.ClientPageDto;
 import org.example.serviceforemployees.service.ClientService;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor

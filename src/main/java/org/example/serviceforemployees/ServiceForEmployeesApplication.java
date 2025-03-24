@@ -12,14 +12,13 @@ import java.util.List;
 
 @SpringBootApplication
 public class ServiceForEmployeesApplication {
-
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(ServiceForEmployeesApplication.class, args);
 
 		fillDb(context);
 	}
 
-	private static void fillDb(ConfigurableApplicationContext context) {
+	public static void fillDb(ConfigurableApplicationContext context) {
 		EmployeeRepository employeeRepository = context.getBean(EmployeeRepository.class);
 
 		AccountRepository accountRepository = context.getBean(AccountRepository.class);
@@ -81,7 +80,6 @@ public class ServiceForEmployeesApplication {
 
 		RoleEntity user = new RoleEntity();
 		user.setName(RoleEnum.EMPLOYEE.getName());
-
 
 		roleRepository.saveAll(List.of(admin, user));
 

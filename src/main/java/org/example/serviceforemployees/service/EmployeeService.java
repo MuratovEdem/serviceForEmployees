@@ -7,8 +7,6 @@ import org.example.serviceforemployees.model.RoleEntity;
 import org.example.serviceforemployees.repository.AccountRepository;
 import org.example.serviceforemployees.repository.EmployeeRepository;
 import org.example.serviceforemployees.repository.RoleRepository;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -27,15 +25,6 @@ public class EmployeeService {
 
     public Optional<Employee> findById(Long id) {
         return employeeRepository.findById(id);
-    }
-
-    public Optional<Employee> findCurrentLoggedUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication.getName());
-        System.out.println(authentication.getAuthorities());
-        System.out.println(authentication.getCredentials());
-        System.out.println(authentication.getPrincipal());
-        return employeeRepository.findByName(authentication.getName());
     }
 
     public Employee create(Employee employee) {

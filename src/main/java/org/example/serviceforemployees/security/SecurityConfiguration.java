@@ -26,6 +26,7 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
       .authorizeHttpRequests(requests -> requests
+
           .requestMatchers("/employees").hasAuthority(RoleEnum.ADMIN.getName())
           .anyRequest().authenticated()
       )
