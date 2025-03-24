@@ -16,6 +16,10 @@ public class ServiceForEmployeesApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(ServiceForEmployeesApplication.class, args);
 
+		fillDb(context);
+	}
+
+	private static void fillDb(ConfigurableApplicationContext context) {
 		EmployeeRepository employeeRepository = context.getBean(EmployeeRepository.class);
 
 		AccountRepository accountRepository = context.getBean(AccountRepository.class);
@@ -78,13 +82,11 @@ public class ServiceForEmployeesApplication {
 		RoleEntity user = new RoleEntity();
 		user.setName(RoleEnum.EMPLOYEE.getName());
 
-		RoleEntity rest = new RoleEntity();
-		rest.setName(RoleEnum.REST.getName());
 
-		roleRepository.saveAll(List.of(admin, user, rest));
+		roleRepository.saveAll(List.of(admin, user));
 
-		HashSet<RoleEntity> set1 = new HashSet<>(List.of(admin, user, rest));
-		HashSet<RoleEntity> set2 = new HashSet<>(List.of(user, rest));
+		HashSet<RoleEntity> set1 = new HashSet<>(List.of(admin, user));
+		HashSet<RoleEntity> set2 = new HashSet<>(List.of(user));
 		HashSet<RoleEntity> set3 = new HashSet<>(List.of(user));
 
 		for (int i = 1; i < 6; i++) {
