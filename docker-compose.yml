@@ -1,21 +1,28 @@
-version: '3.1'
+version: '3'
 
 services:
-  app:
-    build:
-      context: .
-    container_name: app
-    depends_on:
-      - db
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/serviceForEmployees
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-
   db:
     image: 'postgres:13'
     container_name: db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=service_user
+      - POSTGRES_PASSWORD=service_pass
+      - POSTGRES_DB=service_db
+      - PGPORT=5433
+#    ports:
+#      - "5433:5432"
+
+  app:
+    image: "serviceforemployees-service"
+    build:
+      context: .
+#      dockerfile: Dockerfile
+    container_name: app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5433/service_db
+      - SPRING_DATASOURCE_USERNAME=service_user
+      - SPRING_DATASOURCE_PASSWORD=service_pass

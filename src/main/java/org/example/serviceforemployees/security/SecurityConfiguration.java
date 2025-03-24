@@ -26,21 +26,13 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
       .authorizeHttpRequests(requests -> requests
-              .requestMatchers("/home/**").hasAnyAuthority(RoleEnum.ADMIN.getName(), RoleEnum.EMPLOYEE.getName())
-              .requestMatchers("/**").hasAuthority(RoleEnum.ADMIN.getName())
-              .anyRequest().authenticated()
+
+          .requestMatchers("/employees").hasAuthority(RoleEnum.ADMIN.getName())
+          .anyRequest().authenticated()
       )
       .formLogin(Customizer.withDefaults())
       .build();
     }
-
-//    @Bean
-//    SecurityFilterChain noSecurity(HttpSecurity http) throws Exception {
-//        return http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests(it -> it.anyRequest().permitAll())
-//                .build();
-//    }
 
     @Bean
     PasswordEncoder passwordEncoder() {

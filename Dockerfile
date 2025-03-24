@@ -1,4 +1,4 @@
-FROM openjdk:17.0.2-jdk-slim-buster
-ARG JAR_FILE=*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+FROM adoptopenjdk/openjdk11:ubi
+ARG WAR_FILE=target/serviceForEmployees-0.0.1-SNAPSHOT.war
+COPY ${WAR_FILE} application.war
+ENTRYPOINT ["java", "-jar", "/application.war"]
